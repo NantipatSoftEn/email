@@ -1,14 +1,25 @@
 package com.example.email.listener;
 
+import com.example.common.EmailRequest;
+import com.example.email.services.EmailService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Log4j2
 public class EmailListener {
+    private  final EmailService emailService;
+
+    public EmailListener(EmailService emailService) {
+        this.emailService = emailService;
+    }
+
     @KafkaListener(topics = "activation-email")
-    public void listenForActivationEmail(String message){
-        log.info("Kafka received: " + message);
+    public void listenForActivationEmail(EmailRequest request){
+
+        log.info("Kafka received: " + request.getTo());
+        log.info(request.getContent());
+        emailService.send(request.getTo(),request.getSubject(),request.getContent());
     }
 }
