@@ -14,11 +14,11 @@
     <name>email</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>15</java.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.example</groupId>
+            <groupId>com.iamnbty.training</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

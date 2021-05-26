@@ -1,6 +1,7 @@
 package com.example.email.config;
 
-import com.example.common.EmailRequest;
+
+import com.iamnbty.training.common.EmailRequest;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 
 import org.apache.kafka.common.serialization.StringDeserializer;
