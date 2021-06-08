@@ -1,6 +1,7 @@
 package com.example.email.listener;
 
 import com.example.email.services.EmailService;
+
 import com.iamnbty.training.common.EmailRequest;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.kafka.annotation.KafkaListener;
